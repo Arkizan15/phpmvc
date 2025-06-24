@@ -16,7 +16,7 @@
   <?= $mhs['nama']; ?>
   <div>
     <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs['id']; ?>" class="badge bg-primary ms-1">detail</a>
-    <a href="<?= BASEURL; ?>/mahasiswa/ubah/<?= $mhs['id']; ?>" class="badge bg-warning ms-1 tampilModalUbah" data-bs-toggle="modal" data-bs-target="#formModal">ubah</a>
+    <a href="<?= BASEURL; ?>/mahasiswa/ubah/<?= $mhs['id']; ?>" class="badge bg-warning ms-1 tampilModalUbah" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $mhs['id']; ?>">ubah</a>
     <a href="<?= BASEURL; ?>/mahasiswa/hapus/<?= $mhs['id']; ?>" class="badge bg-danger ms-1" onclick="return confirm('yakin?')">hapus</a>
   </div>
 </li>
@@ -34,6 +34,7 @@
       </div>
       <div class="modal-body">
        <form action="<?= BASEURL; ?>/mahasiswa/tambah" method="post">
+        <input type="hidden" name="id" id="id">
   <div class="mb-3">
     <label for="nama" class="form-label">Nama</label>
     <input type="text" class="form-control" name="nama" id="nama">
