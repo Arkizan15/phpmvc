@@ -5,7 +5,7 @@
       <?php Flasher::flash(); ?>
     </div>
   </div>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formModal">
+<button type="button" class="btn btn-primary tombolTambahData" data-bs-toggle="modal" data-bs-target="#formModal">
     Tambah Data Mahasiswa
 </button>
 <br> <br>
@@ -16,6 +16,7 @@
   <?= $mhs['nama']; ?>
   <div>
     <a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs['id']; ?>" class="badge bg-primary ms-1">detail</a>
+    <a href="<?= BASEURL; ?>/mahasiswa/ubah/<?= $mhs['id']; ?>" class="badge bg-warning ms-1 tampilModalUbah" data-bs-toggle="modal" data-bs-target="#formModal">ubah</a>
     <a href="<?= BASEURL; ?>/mahasiswa/hapus/<?= $mhs['id']; ?>" class="badge bg-danger ms-1" onclick="return confirm('yakin?')">hapus</a>
   </div>
 </li>
@@ -24,11 +25,11 @@
 </ul>
 </div>
 <!-- Modal -->
-<div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="judulModal" aria-hidden="true">
+<div class="modal fade" id="formModal" tabindex="-1" aria-labelledby="formModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="judulModal">Tambah Data Mahasiswa</h1>
+        <h1 class="modal-title fs-5" id="formModalLabel">Tambah Data Mahasiswa</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
